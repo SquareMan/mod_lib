@@ -7,7 +7,8 @@ _framehook_shim:
 	call _framehook_c
 	popad
 	mov eax, dword ptr [0x372AC0]
-	jmp 0x60B83
+	jmp _framehook_patch + 5
+	.def	_framehook_patch;	.scl	2;	.type	32;	.endef
     .global _framehook_c
 	.def	_framehook_c;	.scl	2;	.type	32;	.endef
 _framehook_c:
